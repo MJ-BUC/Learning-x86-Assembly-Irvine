@@ -1,0 +1,19 @@
+Convert this C++ program exactly as you see it into x86 assembly language:
+
+#include <iostream>
+
+int value = 3;
+
+void main()
+{
+    int ecx = 10;
+    do
+    {
+        std::cout << value;
+        std::cout << ' ';
+        value += 3;
+    } while (--ecx != 0);
+
+    std::cout << std::endl;
+    system("PAUSE");
+}

@@ -1,0 +1,41 @@
+Convert the following C++ program into an x86 assembly language program.
+Comment the start of each "code block" that performs one of the listed mathematical calculations.
+Comments go to the right of the actual code, all starting on the same column.
+Post ONLY your ASM file here to Blackboard when complete.
+
+// Global variables
+char  a = 5;
+short b = 7;
+int   c = 11;
+int   d = 13;
+
+// Code
+int main()
+{
+    a = -a;
+    d = b + 17;
+    b = static_cast<short>(a);
+    c = static_cast<int>(b);
+    a = a - 3;
+    d = static_cast<int>(a);
+   
+    // Move a into the eax register
+    // Move b into the ebx register
+    // Move c into the ecx register
+    // Move d into the edx register
+    // Call the DumpRegs function   
+
+    a = 19;
+    b = 108;
+    c = 77;
+    d = 7;
+    c = -(a + b + c + d) + a + b + c;
+    d = a + b - c - d - a + b + c - d - a - a + b + a + d + c;
+
+    // Move a into the eax register
+    // Move b into the ebx register
+    // Move c into the ecx register
+    // Move d into the edx register
+    // Call the DumpRegs function   
+
+    // Call the WaitMsg function

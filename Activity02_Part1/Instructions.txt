@@ -1,0 +1,34 @@
+Convert this C++ program exactly as you see it into x86 assembly language:
+
+// Use the Irvine library for the print function
+#include <iostream>
+
+// The string that needs to be printed
+char word[] = "Golf\0";
+// Pointer to a specific character in the string
+char * character = word;
+
+// NOTE: This main() function is not portable outside of Visual Studio
+void main()
+{
+    // Set up a LOOP - See the while loop's conditional expression below
+    int ecx = 4;
+    do
+    {
+        // Print the character
+        // In x86 assembly language you must use the following two lines of code:
+        // mov  al, WHATEVER_CHARACTER_YOU_WANT_TO_PRINT
+        // call WriteChar
+        std::cout << *character;
+        // Increment the pointer
+        ++character;
+    } while (--ecx != 0);
+
+    // In x86 assembly language you must use the following line of code:
+    // call CrLf
+    std::cout << std::endl;
+
+    // In x86 assembly language you must use the following line of code:
+    // call WaitMsg
+    system("PAUSE");
+}

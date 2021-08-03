@@ -1,0 +1,2 @@
+C:\Users\lunke\OneDrive\Documents\CIS 2420\MASM-VS2019-Template\Debug\Project.exe
+C:\Users\lunke\OneDrive\Documents\CIS 2420\Homework08\Homework08_Q2\Debug\Project.exe

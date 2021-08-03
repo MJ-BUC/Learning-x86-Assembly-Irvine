@@ -1,0 +1,60 @@
+Convert this C++ program (and accompanying functions if necessary) into x86 assembly language. This program generates a digit product sequence as shown by this link
+
+// Output when program executes:
+// 1, 2, 4, 8, 16, 22, 26, 38, 62, 74, 102, 104, 108, 116, 122, 126, 138, 162, 174, 202,
+// 206, 218, 234, 258, 338, 410, 414, 430, 442, 474, 586, 826, 922, 958, 1318, 1342, 1366,
+
+NOTES
+The "variables" listed below are actually CPU registers
+You do not need to use global variables for any part of your solution
+The EAX and EDX registers have been set aside for the required multiplication and division operations
+#include <iostream>
+using namespace std;
+
+// Use your completed version from the in-class assignment!
+int Multiplication(int eax, int ebx)
+{   
+    eax = eax * ebx;
+    return eax;
+}
+
+// Use your completed version from the in-class assignment!
+int Division(int eax, int ebx)
+{
+    eax = eax / ebx;
+    return eax;
+}
+
+// Use your completed version from the in-class assignment!
+int Modulus(int eax, int ebx)
+{
+    eax = eax % ebx;
+    return eax;
+}
+
+int main()
+{
+    ebx = 1;
+    while (ebx < 1400)
+    {
+        cout << ebx;
+        cout << ',';
+        cout << ' ';
+
+        ecx = 1;
+        esi = ebx;
+        while (esi > 0)
+        {
+            edi = Modulus(esi, 10);
+            if (edi != 0)
+            {
+                ecx = Multiplication(ecx, edi);
+            }
+            esi = Division(esi, 10);
+        }
+        ebx += ecx;
+    }
+
+    system("PAUSE");
+    return 0;
+}

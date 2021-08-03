@@ -1,0 +1,29 @@
+Convert this C++ program exactly as you see it into x86 assembly language:
+
+#include <iostream>
+
+short array[] = { 8, 3, 1, 4, 9, 5, 7, 2, 6, 10 };
+short * value = array;
+short sum = 0;
+
+void main()
+{
+    int ecx = 5;
+    do
+    {
+        std::cout << '+';
+        std::cout << *value;
+        sum += *value;
+        ++value;
+        std::cout << '-';
+        std::cout << *value;
+        sum -= *value;
+        ++value;
+    } while (--ecx != 0);
+
+    std::cout << '=';
+    std::cout << sum;
+    std::cout << std::endl;
+
+    system("PAUSE");
+}
